@@ -1,0 +1,4 @@
+{"shell-version": ["3.8"],
+ "uuid": "fastuserswitch@azuri.free.fr",
+ "name": "Fast User Switch",
+ "description": "Switch between connected users bypassing useless GDM screen"}
