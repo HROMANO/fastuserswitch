@@ -9,6 +9,12 @@ const Main = imports.ui.main;
 const PanelMenu = imports.ui.panelMenu;
 const PopupMenu = imports.ui.popupMenu;
 
+const Me = imports.misc.extensionUtils.getCurrentExtension();
+const Convenience = Me.imports.convenience;
+
+const Gettext = imports.gettext.domain('fastuserswitch');
+const _ = Gettext.gettext;
+
 let indicator;
 
 const UserMenuItem = new Lang.Class({
@@ -82,7 +88,7 @@ const FastUserSwitchMenu = new Lang.Class({
 			this.menu.addMenuItem(menu_item);
 		}));
 		this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
-		this._switch_user_item = new PopupMenu.PopupMenuItem("Switch user");
+		this._switch_user_item = new PopupMenu.PopupMenuItem(_("Switch user"));
 		this._switch_user_item.connect('activate', Lang.bind(this, this._onSwitchUserActivate));
 		this.menu.addMenuItem(this._switch_user_item);
 	},
@@ -97,6 +103,7 @@ const FastUserSwitchMenu = new Lang.Class({
 });
 
 function init() {
+	Convenience.initTranslations("fastuserswitch");
 }
 
 function enable() {
