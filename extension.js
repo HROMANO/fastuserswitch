@@ -116,6 +116,7 @@ const FastUserSwitchMenu = new Lang.Class({
 });
 
 function init() {
+	Convenience.initTranslations('fastuserswitch');
 }
 
 let _indicator;
