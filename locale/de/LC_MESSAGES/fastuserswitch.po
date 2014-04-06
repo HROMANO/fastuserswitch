@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fast user switch Gnome Shell Extension\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-02 09:35+0100\n"
+"POT-Creation-Date: 2014-04-01 23:19+0200\n"
 "PO-Revision-Date: 2013-11-02 09:37+0100\n"
 "Last-Translator: Jonatan Zeidler <jonatan_zeidler@gmx.de>\n"
 "Language-Team: GERMAN <jonatan_zeidler@gmx.de>\n"
@@ -18,6 +18,6 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: extension.js:88
+#: extension.js:104
 msgid "Switch user"
 msgstr "Benutzer wechseln"
