@@ -1,0 +1,8 @@
+{"shell-version": ["@shell_versions@"],
+ "uuid": "@uuid@",
+ "name": "Fast User Switch",
+ "url": "@url@",
+ "version": "@extension_version@",
+ "description": "Switch between connected users bypassing useless GDM screen",
+ "gettext-domain": "@gettext_domain@"
+}
