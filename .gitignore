@@ -1,0 +1,13 @@
+autom4te.cache/
+config/
+m4/
+zip-files/
+
+aclocal.m4
+config.log
+config.status
+configure
+Makefile
+Makefile.in
+
+
