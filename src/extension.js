@@ -36,7 +36,7 @@ const UserMenuItem = new Lang.Class({
 	
 	activate: function(event) {
 		if (this.user.is_logged_in()) {
-    		this._authPrompt.begin({ userName: this.user.get_user_name() });
+			this._authPrompt.begin({ userName: this.user.get_user_name() });
 		} else {
 			// In case something is wrong, drop back to GDM login screen
 			Gdm.goto_login_session_sync(null);
@@ -47,29 +47,29 @@ const UserMenuItem = new Lang.Class({
 
 const FastUserSwitchMenu = new Lang.Class({
 	Name: 'FastUserSwitchMenu.FastUserSwitchMenu',
-    Extends: PanelMenu.Button,
+  Extends: PanelMenu.Button,
 	
 	_init: function() {
-        this.parent(0.0, "Fast user switch");
-        let hbox = new St.BoxLayout({ style_class: 'panel-status-menu-box' });
-        let icon = new St.Icon({ icon_name: 'system-users-symbolic',
-                                 style_class: 'system-status-icon' });
-        hbox.add_child(icon);
-        hbox.add_child(new St.Label({ text: '\u25BE',
-                                      y_expand: true,
-                                      y_align: Clutter.ActorAlign.CENTER }));
-        this.actor.add_child(hbox);
-        this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
+    this.parent(0.0, "Fast user switch");
+    let hbox = new St.BoxLayout({ style_class: 'panel-status-menu-box' });
+    let icon = new St.Icon({ icon_name: 'system-users-symbolic',
+          	                 style_class: 'system-status-icon' });
+    hbox.add_child(icon);
+    hbox.add_child(new St.Label({ text: '\u25BE',
+          	                      y_expand: true,
+                  	              y_align: Clutter.ActorAlign.CENTER }));
+    this.actor.add_child(hbox);
+    this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
 		this._users = [];
 		this._items = [];
 		this.actor.show();
 		this._user_manager = AccountsService.UserManager.get_default();
 		if (!this._user_manager.is_loaded) {
-			this._user_manager_loaded_id = 
-			    this._user_manager.connect('notify::is-loaded',
-			        Lang.bind(this, this._onUserManagerLoaded));
+		  this._user_manager_loaded_id = 
+		      this._user_manager.connect('notify::is-loaded',
+		          Lang.bind(this, this._onUserManagerLoaded));
 		} else {
-			this._onUserManagerLoaded();
+		  this._onUserManagerLoaded();
 		}
 	},
 	
@@ -81,8 +81,8 @@ const FastUserSwitchMenu = new Lang.Class({
 		this._users = this._user_manager.list_users();
 		this._updateMenu();
 		this._user_manager.connect('user-is-logged-in-changed',
-			Lang.bind(this, function(userManager, user) {
-			    this._updateMenu();
+		    Lang.bind(this, function(userManager, user) {
+			      this._updateMenu();
 		}));
 	},
 	
@@ -92,8 +92,8 @@ const FastUserSwitchMenu = new Lang.Class({
 		let user_names = new Array();
 		this._users.forEach(Lang.bind(this, function(item) {
 			if (item.get_user_name() != GLib.get_user_name() && item.is_logged_in()) {
-			this._items[item.get_real_name()] = item;
-			user_names.push(item.get_real_name());
+				this._items[item.get_real_name()] = item;
+				user_names.push(item.get_real_name());
 		}}));
 		
 		user_names.forEach(Lang.bind(this, function(item) {
