@@ -54,9 +54,6 @@ var FastUserSwitchMenu = GObject.registerClass(
     let icon = new St.Icon({ icon_name: 'system-users-symbolic',
                              style_class: 'system-status-icon' });
     hbox.add_child(icon);
-    // hbox.add_child(new St.Label({ text: '\u25BE',
-    //                               y_expand: true,
-    //                               y_align: Clutter.ActorAlign.CENTER }));
     this.add_child(hbox);
     this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
     this._users = [];
