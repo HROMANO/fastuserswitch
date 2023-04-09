@@ -1,9 +1,6 @@
-const St = imports.gi.St;
-const AccountsService = imports.gi.AccountsService;
-const GLib = imports.gi.GLib;
-const Gdm = imports.gi.Gdm;
+const {St,AccountsService,GLib,Gdm,GObject,Clutter} = imports.gi;
+
 const AuthPrompt = imports.gdm.authPrompt;
-const GObject = imports.gi.GObject;
 
 const Main = imports.ui.main;
 const PanelMenu = imports.ui.panelMenu;
@@ -15,7 +12,6 @@ const Convenience = Me.imports.convenience;
 const Gettext = imports.gettext.domain('fastuserswitch');
 const _ = Gettext.gettext;
 
-const Clutter = imports.gi.Clutter; // For Clutter.ActorAlign.CENTER
 
 var UserMenuItem = GObject.registerClass(
 	{GTypeName: 'FastUserSwitchMenu.UserMenuItem'},
