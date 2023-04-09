@@ -12,10 +12,10 @@ test -f $srcdir/configure.ac || {
     exit 1
 }
 
-which gnome-autogen.sh || {
+which ./gnome-autogen.sh || {
     echo "You need to install gnome-common from GNOME Git (or from"
     echo "your OS vendor's package manager)."
     exit 1
 }
 
-. gnome-autogen.sh
+. ./gnome-autogen.sh
